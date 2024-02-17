@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import "@/styles/globals.css";
 
 export const metadata: Metadata = {
   title: "Cookbook",
+  description: "Create your own cookbook",
 };
 
 export default function RootLayout({
@@ -35,7 +33,11 @@ export default function RootLayout({
         />
         <link rel="manifest" href="/favicon/site.webmanifest" />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body>
+        <main className="flex min-h-screen w-full bg-white opacity-100 bg-[radial-gradient(#900020_0.5px,#FFF_0.5px)] bg-[length:10px_10px]">
+          {children}
+        </main>
+      </body>
     </html>
   );
 }
