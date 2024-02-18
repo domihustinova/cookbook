@@ -1,3 +1,18 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "prettier",
+    "eslint:recommended",
+    "plugin:@next/next/recommended",
+    "next",
+    "next/core-web-vitals"
+  ],
+  "rules": {
+    "import/newline-after-import": "error",
+    "import/order": ["error", { "groups": ["external", "internal"], "newlines-between": "always" }],
+    "react/destructuring-assignment": "error",
+    "react/function-component-definition": [
+      "error",
+      { "namedComponents": "arrow-function", "unnamedComponents": "arrow-function" }
+    ]
+  }
 }
