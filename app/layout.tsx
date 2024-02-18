@@ -1,16 +1,17 @@
-import type { Metadata } from "next";
-import "@/styles/globals.css";
+import React from "react"
+import type { Metadata } from "next"
+import "@/styles/globals.css"
 
 export const metadata: Metadata = {
   title: "Cookbook",
   description: "Create your own cookbook",
-};
+}
 
-export default function RootLayout({
+const RootLayout = ({
   children,
 }: Readonly<{
-  children: React.ReactNode;
-}>) {
+  children: React.ReactNode
+}>) => {
   return (
     <html lang="en">
       <head>
@@ -25,5 +26,7 @@ export default function RootLayout({
         </main>
       </body>
     </html>
-  );
+  )
 }
+
+export default RootLayout
