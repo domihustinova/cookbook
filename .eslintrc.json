@@ -7,9 +7,10 @@
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
     "plugin:import/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:tailwindcss/recommended"
   ],
-  "plugins": ["@typescript-eslint", "import", "prettier"],
+  "plugins": ["@typescript-eslint", "import", "prettier", "tailwindcss"],
   "rules": {
     "@typescript-eslint/no-unused-vars": "error",
     "import/newline-after-import": "error",
