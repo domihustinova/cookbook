@@ -4,7 +4,7 @@ export const recipes: Recipe[] = [
   {
     id: "kefirova-buchta",
     category: "dessert",
-    language: "Czech",
+    language: "czech",
     time: 50,
     totalKcal: 2589,
     nutrients: {
@@ -46,7 +46,7 @@ export const recipes: Recipe[] = [
   {
     id: "pancakes-batter",
     category: "dessert",
-    language: "English",
+    language: "english",
     totalKcal: 1675,
     nutrients: {
       protein: 59.8,
@@ -75,7 +75,7 @@ export const recipes: Recipe[] = [
   {
     id: "housky",
     category: "bread",
-    language: "Czech",
+    language: "czech",
     totalKcal: 1864,
     nutrients: {
       protein: 47.9,

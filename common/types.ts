@@ -1,6 +1,6 @@
-type Category = "bread" | "dessert" | "main"
+export type Category = "bread" | "dessert" | "main"
 
-type Language = "Czech" | "English" | "Slovak"
+export type Language = "czech" | "english" | "slovak"
 
 type Nutrients = {
   protein: number
@@ -8,7 +8,7 @@ type Nutrients = {
   fat: number
 }
 
-type Amount = {
+export type Amount = {
   count: number
   type: "serving" | "piece"
 }
