@@ -48,3 +48,10 @@ export type Recipe = {
   notes?: string[]
   credit?: string
 }
+
+export type RecipeDetail = {
+  category: Category
+  title: string
+  caloriesInfo: string
+  href: string
+}
