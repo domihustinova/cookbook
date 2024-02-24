@@ -2,8 +2,8 @@ import React from "react"
 import Link from "next/link"
 import { ArrowRight, Fire } from "@phosphor-icons/react/dist/ssr"
 
-import { RecipeDetail as RecipeDetailCardProps } from "@/common/types"
-import CategoryIcon from "@/components/CategoryIcon/CategoryIcon"
+import { RecipeDetail as RecipeDetailCardProps } from "@/types"
+import CategoryIcon from "@/app/components/CategoryIcon"
 
 const RecipeDetailCard = ({ category, title, caloriesInfo, href }: RecipeDetailCardProps) => {
   return (

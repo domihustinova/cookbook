@@ -1,5 +1,5 @@
 import { recipes } from "@/data/recipes"
-import { RecipeDetail } from "@/common/types"
+import { RecipeDetail } from "@/types"
 
 const amountOptions = {
   piece: {
