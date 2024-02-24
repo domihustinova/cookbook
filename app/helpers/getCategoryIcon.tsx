@@ -10,5 +10,7 @@ export const getCategoryIcon = (category: Category) => {
       return <Cookie size={24} />
     case "main":
       return <BowlFood size={24} />
+    default:
+      throw new Error(`Unknown category: ${category}`)
   }
 }
