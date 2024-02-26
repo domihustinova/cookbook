@@ -17,11 +17,11 @@ const Home = () => {
           </span>{" "}
           👋🏻
         </h1>
-        <p className="mt-2 text-xl font-semibold">What do you want to cook today?</p>
+        <h2 className="mt-2 text-xl font-semibold">What do you want to cook today?</h2>
       </header>
       <main className="px-4">
         <section className="mx-auto max-w-6xl">
-          <h3 className="font-semibold tracking-wide md:text-xl">Recently added</h3>
+          <h2 className="font-semibold tracking-wide md:text-xl">Recently added</h2>
           <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {recipesDetails.map(recipeDetails => (
               <RecipeDetailCard key={recipeDetails.title} {...recipeDetails} />
