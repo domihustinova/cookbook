@@ -37,7 +37,7 @@ describe("HomePage", () => {
     ).toBeVisible()
   })
 
-  it("displays 6 recipe cards", () => {
-    expect(screen.getAllByRole("link")).toHaveLength(6)
+  it("displays 5 recipe cards", () => {
+    expect(screen.getAllByRole("link")).toHaveLength(5)
   })
 })

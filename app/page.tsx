@@ -2,7 +2,7 @@ import React from "react"
 
 import RecipeDetailCard from "@/app/components/RecipeDetailCard"
 
-import { getRecipesDetails } from "./helpers/getRecipesDetails"
+import getRecipesDetails from "./helpers/getRecipesDetails"
 
 const Home = () => {
   const recipesDetails = getRecipesDetails()

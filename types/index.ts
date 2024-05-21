@@ -1,34 +1,40 @@
 export type Category = "bread" | "dessert" | "main"
 
-export type Language = "czech" | "english" | "slovak"
-
 type Nutrients = {
   protein: number
   carbohydrates: number
   fat: number
 }
 
-export type Amount = {
-  count: number
+export type Yields = {
+  amount: number
   type: "serving" | "piece"
 }
 
+export type UnitType = "count" | "volume" | "weight"
+
+export type CountUnit = "piece" | "pinch"
+
 type CountUnitType = {
   unitType: "count"
-  unit: "piece" | "pinch"
+  unit: CountUnit
 }
+
+export type VolumeUnit = "teaspoon" | "tablespoon" | "millilitre" | "litre"
 
 type VolumeUnitType = {
   unitType: "volume"
-  unit: "teaspoon" | "tablespoon" | "millilitre" | "litre"
+  unit: VolumeUnit
 }
+
+export type WeightUnit = "grams" | "kilograms"
 
 type WeightUnitType = {
   unitType: "weight"
-  unit: "grams" | "kilograms"
+  unit: WeightUnit
 }
 
-type Ingredient = {
+export type Ingredient = {
   amount: string
   ingredient: string
 } & (CountUnitType | VolumeUnitType | WeightUnitType)
@@ -36,11 +42,10 @@ type Ingredient = {
 export type Recipe = {
   id: string
   category: Category
-  language: Language
   time?: number
   totalKcal: number
   nutrients: Nutrients
-  amount: Amount
+  yields: Yields
   title: string
   ingredients: Ingredient[]
   extraIngredients?: string[]

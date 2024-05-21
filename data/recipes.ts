@@ -4,7 +4,6 @@ export const recipes: Recipe[] = [
   {
     id: "kefirova-buchta",
     category: "dessert",
-    language: "czech",
     time: 50,
     totalKcal: 2589,
     nutrients: {
@@ -12,7 +11,7 @@ export const recipes: Recipe[] = [
       carbohydrates: 316.8,
       fat: 115.9,
     },
-    amount: { count: 8, type: "piece" },
+    yields: { amount: 8, type: "piece" },
     title: "Kefírová buchta",
     ingredients: [
       { amount: "2", ingredient: "vejce", unitType: "count", unit: "piece" },
@@ -46,14 +45,13 @@ export const recipes: Recipe[] = [
   {
     id: "pancakes-batter",
     category: "dessert",
-    language: "english",
     totalKcal: 1675,
     nutrients: {
       protein: 59.8,
       carbohydrates: 199.5,
       fat: 69,
     },
-    amount: { count: 9, type: "piece" },
+    yields: { amount: 9, type: "piece" },
     title: "Pancakes batter",
     ingredients: [
       { amount: "3", ingredient: "eggs", unitType: "count", unit: "piece" },
@@ -75,14 +73,13 @@ export const recipes: Recipe[] = [
   {
     id: "housky",
     category: "bread",
-    language: "czech",
     totalKcal: 1864,
     nutrients: {
       protein: 47.9,
       carbohydrates: 302.6,
       fat: 46.7,
     },
-    amount: { count: 8, type: "piece" },
+    yields: { amount: 8, type: "piece" },
     title: "Housky",
     ingredients: [
       { amount: "400", ingredient: "hladká mouka", unitType: "weight", unit: "grams" },
