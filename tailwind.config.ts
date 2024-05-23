@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss"
+import plugin from "tailwindcss/plugin"
 
 const config: Config = {
   content: [
@@ -21,6 +22,7 @@ const config: Config = {
           dark: "#4A5759",
           medium: "#B0C4B1",
           light: "#DEDBD2",
+          lightest: "#EBEAE4",
         },
         red: {
           primary: "#d8003e",
@@ -31,8 +33,16 @@ const config: Config = {
           primary: "#ffd634",
         },
       },
+      backgroundImage: {
+        defaultGreen:
+          "linear-gradient(to right bottom, #dedbd2, #d5d5c8, #cacfbf, #bec9b7, #b0c4b1)",
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addVariant }) {
+      addVariant("hocus", ["&:hover", "&:focus"])
+    }),
+  ],
 }
 export default config
