@@ -1,8 +1,9 @@
 export type Category = "bread" | "dessert" | "main"
 
 type Nutrients = {
+  totalKcal: number
   protein: number
-  carbohydrates: number
+  carbs: number
   fat: number
 }
 
@@ -43,7 +44,6 @@ export type Recipe = {
   id: string
   category: Category
   time?: number
-  totalKcal: number
   nutrients: Nutrients
   yields: Yields
   title: string
