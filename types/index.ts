@@ -1,6 +1,6 @@
 export type Category = "bread" | "dessert" | "main"
 
-type Nutrients = {
+export type Nutrients = {
   totalKcal: number
   protein: number
   carbs: number
