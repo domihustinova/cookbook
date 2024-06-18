@@ -8,7 +8,7 @@ const Home = () => {
   const recipesDetails = getRecipesDetails()
 
   return (
-    <>
+    <div className="min-h-screen bg-defaultGreen">
       <header className="py-28 text-center sm:py-40">
         <h1 className="text-5xl font-bold sm:text-7xl">
           Hello{" "}
@@ -29,7 +29,7 @@ const Home = () => {
           </div>
         </section>
       </main>
-    </>
+    </div>
   )
 }
 
