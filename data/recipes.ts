@@ -5,10 +5,10 @@ export const recipes: Recipe[] = [
     id: "kefir-cake",
     category: "dessert",
     time: 50,
-    totalKcal: 2589,
     nutrients: {
+      totalKcal: 2589,
       protein: 61.4,
-      carbohydrates: 316.8,
+      carbs: 316.8,
       fat: 115.9,
     },
     yields: { amount: 8, type: "piece" },
@@ -45,10 +45,10 @@ export const recipes: Recipe[] = [
   {
     id: "pancakes-batter",
     category: "dessert",
-    totalKcal: 1675,
     nutrients: {
+      totalKcal: 1675,
       protein: 59.8,
-      carbohydrates: 199.5,
+      carbs: 199.5,
       fat: 69,
     },
     yields: { amount: 9, type: "piece" },
@@ -73,10 +73,10 @@ export const recipes: Recipe[] = [
   {
     id: "buns",
     category: "bread",
-    totalKcal: 1864,
     nutrients: {
+      totalKcal: 1864,
       protein: 47.9,
-      carbohydrates: 302.6,
+      carbs: 302.6,
       fat: 46.7,
     },
     yields: { amount: 8, type: "piece" },
