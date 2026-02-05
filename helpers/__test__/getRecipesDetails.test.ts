@@ -2,7 +2,7 @@ import { mockedRecipes } from "@/testUtils/mockedRecipes"
 
 import getRecipesDetails from "../getRecipesDetails"
 
-jest.mock("../../../data/recipes.ts", () => ({
+jest.mock("../../data/recipes.ts", () => ({
   recipes: mockedRecipes,
 }))
 

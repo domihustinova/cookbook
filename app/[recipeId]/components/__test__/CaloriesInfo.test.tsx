@@ -37,7 +37,9 @@ describe("CaloriesInfo", () => {
     expect(screen.getByText("25 g")).toBeVisible()
     expect(screen.getByText("5 g")).toBeVisible()
 
-    const button = screen.getByRole("button", { name: "Toggle nutrient values" })
+    const button = screen.getByRole("button", {
+      name: "Toggle nutrient values per total yield or per 1 piece",
+    })
     await user.click(button)
 
     expect(screen.getByText("per 2 servings")).toBeVisible()
