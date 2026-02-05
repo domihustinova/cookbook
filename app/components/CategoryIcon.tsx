@@ -1,5 +1,5 @@
 import { Category } from "@/types"
-import { getCategoryIcon } from "@/app/helpers/getCategoryIcon"
+import { getCategoryIcon } from "@/helpers/getCategoryIcon"
 
 type Props = {
   category: Category
