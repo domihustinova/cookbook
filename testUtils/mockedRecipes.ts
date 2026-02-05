@@ -1,6 +1,9 @@
 import { Recipe } from "@/types"
 
-export const mockedRecipes: Pick<Recipe, "id" | "category" | "nutrients" | "yields" | "title">[] = [
+export const mockedRecipes: Pick<
+  Recipe,
+  "id" | "category" | "nutrients" | "yields" | "title" | "ingredients"
+>[] = [
   {
     id: "dummy-recipe1",
     category: "bread",
@@ -12,6 +15,11 @@ export const mockedRecipes: Pick<Recipe, "id" | "category" | "nutrients" | "yiel
       fat: 30,
     },
     title: "title1",
+    ingredients: [
+      { ingredient: "Flour", amount: "200", unitType: "weight", unit: "grams" },
+      { ingredient: "Sugar", amount: "100", unitType: "weight", unit: "grams" },
+      { ingredient: "Eggs", amount: "2", unitType: "count", unit: "piece" },
+    ],
   },
   {
     id: "dummy-recipe2",
@@ -24,6 +32,11 @@ export const mockedRecipes: Pick<Recipe, "id" | "category" | "nutrients" | "yiel
       fat: 60,
     },
     title: "title2",
+    ingredients: [
+      { ingredient: "Flour", amount: "200", unitType: "weight", unit: "grams" },
+      { amount: "2", ingredient: "cocoa", unitType: "volume", unit: "tablespoon" },
+      { ingredient: "Eggs", amount: "2", unitType: "count", unit: "piece" },
+    ],
   },
   {
     id: "dummy-recipe3",
@@ -36,6 +49,11 @@ export const mockedRecipes: Pick<Recipe, "id" | "category" | "nutrients" | "yiel
       fat: 50,
     },
     title: "title3",
+    ingredients: [
+      { ingredient: "Flour", amount: "200", unitType: "weight", unit: "grams" },
+      { ingredient: "Sugar", amount: "100", unitType: "weight", unit: "grams" },
+      { amount: "500", ingredient: "milk", unitType: "volume", unit: "millilitre" },
+    ],
   },
   {
     id: "dummy-recipe4",
@@ -48,6 +66,11 @@ export const mockedRecipes: Pick<Recipe, "id" | "category" | "nutrients" | "yiel
       fat: 40,
     },
     title: "title4",
+    ingredients: [
+      { ingredient: "Flour", amount: "200", unitType: "weight", unit: "grams" },
+      { ingredient: "Sugar", amount: "100", unitType: "weight", unit: "grams" },
+      { ingredient: "Eggs", amount: "2", unitType: "count", unit: "piece" },
+    ],
   },
   {
     id: "dummy-recipe5",
@@ -60,5 +83,9 @@ export const mockedRecipes: Pick<Recipe, "id" | "category" | "nutrients" | "yiel
       fat: 30,
     },
     title: "title5",
+    ingredients: [
+      { ingredient: "Flour", amount: "200", unitType: "weight", unit: "grams" },
+      { amount: "200", ingredient: "water", unitType: "weight", unit: "grams" },
+    ],
   },
 ]
