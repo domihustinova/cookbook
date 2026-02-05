@@ -17,7 +17,7 @@ const config: Config = {
       },
       colors: {
         green: {
-          primary: "#008a7a",
+          primary: "#0f766e",
           darkest: "#132925",
           dark: "#4A5759",
           medium: "#B0C4B1",
@@ -36,6 +36,7 @@ const config: Config = {
       backgroundImage: {
         defaultGreen:
           "linear-gradient(to right bottom, #dedbd2, #d5d5c8, #cacfbf, #bec9b7, #b0c4b1)",
+        brush: "var(--brush)",
       },
     },
   },
