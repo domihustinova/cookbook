@@ -11,6 +11,11 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
+    "pw": "playwright test",
+    "pw:ui": "playwright test --ui",
+    "pw:headed": "playwright test --headed",
+    "pw:debug": "playwright test --debug",
+    "pw:report": "playwright show-report",
     "prepare": "husky"
   },
   "dependencies": {
@@ -22,6 +27,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.1",
+    "@playwright/test": "^1.58.2",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^16.0.0",
     "@testing-library/user-event": "^14.5.2",
