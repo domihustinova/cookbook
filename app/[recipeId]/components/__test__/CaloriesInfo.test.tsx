@@ -1,8 +1,8 @@
+import { Drop, FishSimple } from "@phosphor-icons/react/dist/ssr"
 import { render, screen } from "@testing-library/react"
 import { userEvent } from "@testing-library/user-event"
-import { Drop, FishSimple } from "@phosphor-icons/react/dist/ssr"
 
-import { Nutrients, Yields } from "@/types"
+import type { Nutrients, Yields } from "@/types"
 
 import CaloriesInfo, { NutrientInfo } from "../CaloriesInfo"
 

@@ -1,6 +1,6 @@
 import { BowlFood, Cookie, Grains } from "@phosphor-icons/react/dist/ssr"
 
-import { Category } from "@/types"
+import type { Category } from "@/types"
 
 export const getCategoryIcon = (category: Category) => {
   switch (category) {

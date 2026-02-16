@@ -1,6 +1,6 @@
 import { BowlFood, Cookie, Grains } from "@phosphor-icons/react"
 
-import { Category } from "@/types"
+import type { Category } from "@/types"
 
 import { getCategoryIcon } from "../getCategoryIcon"
 

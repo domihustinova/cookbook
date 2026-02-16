@@ -41,7 +41,7 @@ const config: Config = {
     },
   },
   plugins: [
-    plugin(function ({ addVariant }) {
+    plugin(({ addVariant }) => {
       addVariant("hocus", ["&:hover", "&:focus"])
     }),
   ],

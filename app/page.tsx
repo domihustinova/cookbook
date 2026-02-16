@@ -1,7 +1,5 @@
-import React from "react"
-
-import getRecipesDetails from "@/helpers/getRecipesDetails"
 import RecipeDetailCard from "@/app/components/RecipeDetailCard"
+import getRecipesDetails from "@/helpers/getRecipesDetails"
 
 const Home = () => {
   const recipesDetails = getRecipesDetails()
@@ -9,14 +7,14 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-defaultGreen">
       <header className="py-28 text-center sm:py-40">
-        <h1 className="text-5xl font-bold sm:text-7xl">
+        <h1 className="font-bold text-5xl sm:text-7xl">
           Hello{" "}
           <span className="bg-gradient-to-tr from-teal-700 via-teal-600 to-teal-700 bg-clip-text text-transparent">
             foodie
           </span>{" "}
           👋🏻
         </h1>
-        <h2 className="mt-2 text-xl font-semibold">What do you want to cook today?</h2>
+        <h2 className="mt-2 font-semibold text-xl">What do you want to cook today?</h2>
       </header>
       <main className="px-4">
         <section className="mx-auto max-w-6xl">

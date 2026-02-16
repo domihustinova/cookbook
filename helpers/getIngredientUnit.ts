@@ -1,4 +1,4 @@
-import { CountUnit, Ingredient, VolumeUnit, WeightUnit } from "@/types"
+import type { CountUnit, Ingredient, VolumeUnit, WeightUnit } from "@/types"
 
 const countUnit: {
   [key in CountUnit]: {
