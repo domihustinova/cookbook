@@ -1,10 +1,10 @@
 "use client"
 
-import { useEffect, useState } from "react"
 import { Check } from "@phosphor-icons/react/dist/ssr"
+import { useEffect, useState } from "react"
 
 import getIngredientUnitSymbol from "@/helpers/getIngredientUnit"
-import { Ingredient } from "@/types/index"
+import type { Ingredient } from "@/types/index"
 
 type IngredientsProps = {
   recipeId: string
@@ -47,8 +47,8 @@ const Ingredients = ({ recipeId, ingredients }: IngredientsProps) => {
   }
 
   return (
-    <section className="mt-6 flex max-w-72 flex-col gap-3 rounded-xl border border-dashed border-green-primary/30 bg-white/60 p-4">
-      <h2 className="w-fit bg-brush px-3 text-xl font-semibold text-green-darkest">Ingredients</h2>
+    <section className="mt-6 flex max-w-72 flex-col gap-3 rounded-xl border border-green-primary/30 border-dashed bg-white/60 p-4">
+      <h2 className="w-fit bg-brush px-3 font-semibold text-green-darkest text-xl">Ingredients</h2>
       <table className="w-full text-center">
         <tbody>
           {ingredients.map(({ ingredient, amount, ...ingredientData }, index) => {
@@ -84,7 +84,7 @@ const Ingredients = ({ recipeId, ingredients }: IngredientsProps) => {
           })}
         </tbody>
       </table>
-      <div className="mt-2 flex justify-center gap-3 text-xs font-semibold uppercase tracking-wide">
+      <div className="mt-2 flex justify-center gap-3 font-semibold text-xs uppercase tracking-wide">
         <button
           type="button"
           className="duration-300 hover:text-green-primary"

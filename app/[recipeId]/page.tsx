@@ -1,6 +1,6 @@
-import { Metadata } from "next"
-import Link from "next/link"
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr"
+import type { Metadata } from "next"
+import Link from "next/link"
 
 import { recipes } from "@/data/recipes"
 

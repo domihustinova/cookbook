@@ -1,7 +1,7 @@
-import { render, screen, fireEvent } from "@testing-library/react"
+import { fireEvent, render, screen } from "@testing-library/react"
 
 import "@testing-library/jest-dom"
-import { Ingredient } from "@/types/index"
+import type { Ingredient } from "@/types/index"
 
 import Ingredients from "../Ingredients"
 
@@ -110,7 +110,7 @@ describe("Ingredients", () => {
     const { unmount } = render(<Ingredients recipeId="recipe-1" ingredients={mockIngredients} />)
 
     const flourRow = screen.getByText("Flour").closest("tr")
-    fireEvent.click(flourRow!)
+    fireEvent.click(flourRow as Element)
 
     expect(localStorage.getItem("usedIngredients-recipe-1")).toBe(JSON.stringify(["Flour"]))
 

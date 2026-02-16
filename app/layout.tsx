@@ -1,8 +1,8 @@
-import React from "react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from "next"
 import { Inter, Poppins, Roboto } from "next/font/google"
 import localFont from "next/font/local"
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import type React from "react"
 
 import "@/styles/globals.css"
 

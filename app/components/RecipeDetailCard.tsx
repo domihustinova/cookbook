@@ -1,9 +1,7 @@
-import React from "react"
-import Link from "next/link"
 import { ArrowRight, Fire } from "@phosphor-icons/react/dist/ssr"
-
-import { RecipeDetail as RecipeDetailCardProps } from "@/types"
+import Link from "next/link"
 import CategoryIcon from "@/app/components/CategoryIcon"
+import type { RecipeDetail as RecipeDetailCardProps } from "@/types"
 
 const RecipeDetailCard = ({ category, title, caloriesInfo, href }: RecipeDetailCardProps) => {
   return (
@@ -15,8 +13,8 @@ const RecipeDetailCard = ({ category, title, caloriesInfo, href }: RecipeDetailC
         <div className="flex items-start gap-3">
           <CategoryIcon category={category} />
           <div className="flex flex-col">
-            <h3 className="text-lg font-semibold">{title}</h3>
-            <div className="flex items-center gap-1 text-sm text-green-dark">
+            <h3 className="font-semibold text-lg">{title}</h3>
+            <div className="flex items-center gap-1 text-green-dark text-sm">
               <Fire size={14} />
               <span>{caloriesInfo}</span>
             </div>

@@ -1,4 +1,4 @@
-import { getCaloriesInfo, isValidYieldAmount, getPerUnitValue } from "../nutrition"
+import { getCaloriesInfo, getPerUnitValue, isValidYieldAmount } from "../nutrition"
 
 describe("getCaloriesInfo", () => {
   it("returns the correct calories info", () => {
