@@ -1,3 +1,4 @@
+import { Metadata } from "next"
 import Link from "next/link"
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr"
 
@@ -10,6 +11,21 @@ export function generateStaticParams() {
   return recipes.map(recipe => ({
     recipeId: recipe.id,
   }))
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ recipeId: string }>
+}): Promise<Metadata> {
+  const { recipeId } = await params
+  const recipe = recipes.find(recipe => recipe.id === recipeId)
+
+  if (!recipe) {
+    return { title: "Recipe not found" }
+  }
+
+  return { title: `${recipe.title} | Cookbook` }
 }
 
 const RecipePage = ({ params }: { params: { recipeId: string } }) => {
