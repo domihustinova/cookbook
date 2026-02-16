@@ -22,11 +22,11 @@ type CaloriesInfoProps = Pick<Recipe, "nutrients" | "yields">
 
 export const NutrientInfo = ({ Icon, value, unit, label }: NutrientInfo) => (
   <div className="flex flex-col items-center" data-test={`nutrient-${label}`}>
-    <Icon className="size-6 text-green-primary md:size-[30px]" />
-    <span className="mt-1 text-green-darkest md:text-lg">
+    <Icon className="size-6 text-green-primary" />
+    <span className="mt-1 text-sm text-green-darkest">
       {value}&nbsp;{unit}
     </span>
-    <span className="text-sm text-green-dark md:text-base">{label}</span>
+    <span className="text-xs text-green-dark">{label}</span>
   </div>
 )
 
@@ -49,14 +49,11 @@ const CaloriesInfo = ({ nutrients, yields }: CaloriesInfoProps) => {
     setIsTotal(prevIsTotal => !prevIsTotal)
   }
   return (
-    <div className="mt-4 flex flex-col items-end">
-      <span className="text-sm italic text-slate-500">
-        {canComputePerUnit ? (isTotal ? `per ${amount} ${type}s` : `per 1 ${type}`) : "per recipe"}
-      </span>
+    <div className="flex flex-col">
       <button
         // TODO: revisit button role
         aria-label="Toggle nutrient values per total yield or per 1 piece"
-        className="grid w-full cursor-pointer grid-cols-4 rounded-xl border border-dashed border-green-primary/30 p-2 duration-300 hover:bg-slate-50"
+        className="grid cursor-pointer grid-cols-4 rounded-xl border border-dashed border-green-primary/30 p-2 duration-300 hover:bg-slate-50"
         onClick={handleClick}
         data-test="calories-info"
       >
@@ -69,6 +66,9 @@ const CaloriesInfo = ({ nutrients, yields }: CaloriesInfoProps) => {
           />
         ))}
       </button>
+      <span className="text-sm italic text-slate-500">
+        {canComputePerUnit ? (isTotal ? `per ${amount} ${type}s` : `per 1 ${type}`) : "per recipe"}
+      </span>
     </div>
   )
 }
