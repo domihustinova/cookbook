@@ -10,7 +10,12 @@ const config = {
   coveragePathIgnorePatterns: ["/node_modules/"],
   setupFilesAfterEnv: ["<rootDir>/jest.setup.ts", "jest-extended/all"],
   testEnvironment: "jsdom",
-  testPathIgnorePatterns: ["<rootDir>/.next/", "<rootDir>/node_modules/", "<rootDir>/public/"],
+  testPathIgnorePatterns: [
+    "<rootDir>/.next/",
+    "<rootDir>/node_modules/",
+    "<rootDir>/public/",
+    "<rootDir>/tests/",
+  ],
 }
 
 module.exports = createJestConfig(config)

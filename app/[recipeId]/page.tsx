@@ -38,7 +38,7 @@ const RecipePage = ({ params }: { params: { recipeId: string } }) => {
   const { nutrients, yields, title, credit, ingredients } = recipe
 
   return (
-    <main className="p-4 md:mx-auto md:max-w-[900px]">
+    <main className="p-4 md:mx-auto md:max-w-[900px]" data-test="recipe-detail-page">
       <h1 className="text-3xl md:text-5xl">{title}</h1>
       {credit && (
         <Link
