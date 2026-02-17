@@ -6,12 +6,16 @@
     "useIgnoreFile": true,
     "defaultBranch": "main"
   },
+  "files": {
+    "ignoreUnknown": false
+  },
   "css": {
     "parser": {
       "tailwindDirectives": true
     }
   },
   "assist": {
+    "enabled": true,
     "actions": {
       "source": {
         "organizeImports": "on"
@@ -43,6 +47,7 @@
       "correctness": {
         "noUnusedVariables": "error",
         "noUnusedImports": "error",
+        "noUnusedFunctionParameters": "error",
         "useExhaustiveDependencies": "warn",
         "useHookAtTopLevel": "error"
       },
