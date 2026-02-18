@@ -6,7 +6,7 @@ import type { RecipeDetail as RecipeDetailCardProps } from "@/types"
 const RecipeDetailCard = ({ category, title, caloriesInfo, href }: RecipeDetailCardProps) => {
   return (
     <div
-      className="cursor-pointer rounded-2xl bg-white p-1 shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]"
+      className="cursor-pointer rounded-2xl bg-white p-1 shadow-(--shadow-card)"
       data-test="recipe-card"
     >
       <Link

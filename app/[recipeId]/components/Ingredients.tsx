@@ -47,7 +47,7 @@ const Ingredients = ({ recipeId, ingredients }: IngredientsProps) => {
   }
 
   return (
-    <section className="mt-6 flex max-w-72 flex-col gap-3 rounded-xl border border-green-primary/30 border-dashed bg-white/60 p-4">
+    <section className="mt-6 flex flex-col gap-3 rounded-xl border border-green-primary/30 border-dashed bg-white/60 p-4">
       <h2 className="w-fit bg-brush px-3 font-semibold text-green-darkest text-xl">Ingredients</h2>
       <table className="w-full text-center">
         <tbody>

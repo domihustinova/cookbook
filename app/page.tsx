@@ -9,7 +9,7 @@ const Home = () => {
       <header className="py-28 text-center sm:py-40">
         <h1 className="font-bold text-5xl sm:text-7xl">
           Hello{" "}
-          <span className="bg-gradient-to-tr from-teal-700 via-teal-600 to-teal-700 bg-clip-text text-transparent">
+          <span className="bg-linear-to-tr from-teal-700 via-teal-600 to-teal-700 bg-clip-text text-transparent">
             foodie
           </span>{" "}
           👋🏻
