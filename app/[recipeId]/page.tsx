@@ -28,7 +28,8 @@ export async function generateMetadata({
   return { title: `${recipe.title} | Cookbook` }
 }
 
-const RecipePage = ({ params }: { params: { recipeId: string } }) => {
+const RecipePage = async (props: { params: Promise<{ recipeId: string }> }) => {
+  const params = await props.params
   const recipe = recipes.find(recipe => recipe.id === params.recipeId)
 
   if (!recipe) {
