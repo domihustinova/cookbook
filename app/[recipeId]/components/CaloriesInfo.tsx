@@ -1,7 +1,7 @@
 "use client"
 
 import type { IconProps } from "@phosphor-icons/react"
-import { Drop, Fire, FishSimple, Grains } from "@phosphor-icons/react/dist/ssr"
+import { DropIcon, FireIcon, FishSimpleIcon, GrainsIcon } from "@phosphor-icons/react/dist/ssr"
 import { useState } from "react"
 import { getPerUnitValue, isValidYieldAmount } from "@/helpers/nutrition"
 import type { Recipe } from "@/types"
@@ -38,10 +38,10 @@ const CaloriesInfo = ({ nutrients, yields }: CaloriesInfoProps) => {
   const canComputePerUnit = isValidYieldAmount(amount)
 
   const nutrientInfoData: NutrientInfo[] = [
-    { Icon: Fire, value: totalKcal, unit: "kcal", label: "total" },
-    { Icon: FishSimple, value: protein, unit: "g", label: "protein" },
-    { Icon: Grains, value: carbs, unit: "g", label: "carbs" },
-    { Icon: Drop, value: fat, unit: "g", label: "fat" },
+    { Icon: FireIcon, value: totalKcal, unit: "kcal", label: "total" },
+    { Icon: FishSimpleIcon, value: protein, unit: "g", label: "protein" },
+    { Icon: GrainsIcon, value: carbs, unit: "g", label: "carbs" },
+    { Icon: DropIcon, value: fat, unit: "g", label: "fat" },
   ]
 
   const handleClick = () => {
