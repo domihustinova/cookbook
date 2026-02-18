@@ -21,7 +21,7 @@ type CaloriesInfoProps = Pick<Recipe, "nutrients" | "yields">
 
 export const NutrientInfo = ({ Icon, value, unit, label }: NutrientInfo) => (
   <div className="flex flex-col items-center" data-test={`nutrient-${label}`}>
-    <Icon className="size-6 text-green-primary" />
+    <Icon className="size-4 text-green-primary" />
     <span className="mt-1 text-green-darkest text-sm">
       {value}&nbsp;{unit}
     </span>

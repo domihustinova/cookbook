@@ -52,7 +52,7 @@ const RecipePage = async (props: { params: Promise<{ recipeId: string }> }) => {
         </Link>
       )}
       <div className="flex gap-4">
-        <div className="flex min-w-72 flex-col gap-4">
+        <div className="flex w-fit min-w-64 flex-col gap-4">
           <Ingredients recipeId={params.recipeId} ingredients={ingredients} />
           <CaloriesInfo nutrients={nutrients} yields={yields} />
         </div>
