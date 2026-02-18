@@ -1,4 +1,4 @@
-import { ArrowRight, Fire } from "@phosphor-icons/react/dist/ssr"
+import { ArrowRightIcon, FireIcon } from "@phosphor-icons/react/dist/ssr"
 import Link from "next/link"
 import CategoryIcon from "@/app/components/CategoryIcon"
 import type { RecipeDetail as RecipeDetailCardProps } from "@/types"
@@ -18,13 +18,13 @@ const RecipeDetailCard = ({ category, title, caloriesInfo, href }: RecipeDetailC
           <div className="flex flex-col">
             <h3 className="font-semibold text-lg">{title}</h3>
             <div className="flex items-center gap-1 text-green-dark text-sm">
-              <Fire size={14} />
+              <FireIcon size={14} />
               <span>{caloriesInfo}</span>
             </div>
           </div>
         </div>
         <div className="font-medium duration-300 group-hover:translate-x-2">
-          <ArrowRight size={22} className="text-green-primary" />
+          <ArrowRightIcon size={22} className="text-green-primary" />
         </div>
       </Link>
     </div>

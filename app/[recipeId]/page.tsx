@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr"
+import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr"
 import type { Metadata } from "next"
 import Link from "next/link"
 
@@ -48,7 +48,7 @@ const RecipePage = async (props: { params: Promise<{ recipeId: string }> }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Original recipe <ArrowUpRight size={18} />
+          Original recipe <ArrowUpRightIcon size={18} />
         </Link>
       )}
       <div className="flex gap-4">

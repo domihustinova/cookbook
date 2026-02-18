@@ -1,6 +1,6 @@
 "use client"
 
-import { Check } from "@phosphor-icons/react/dist/ssr"
+import { CheckIcon } from "@phosphor-icons/react/dist/ssr"
 import { useEffect, useState } from "react"
 
 import getIngredientUnitSymbol from "@/helpers/getIngredientUnit"
@@ -76,7 +76,7 @@ const Ingredients = ({ recipeId, ingredients }: IngredientsProps) => {
                 >
                   {ingredient}
                   <span className="inline-flex w-4">
-                    {isUsed && <Check data-test="check-icon" />}
+                    {isUsed && <CheckIcon data-test="check-icon" />}
                   </span>
                 </td>
               </tr>

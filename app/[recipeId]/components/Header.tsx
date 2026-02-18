@@ -1,4 +1,4 @@
-import { ArrowLeft } from "@phosphor-icons/react/dist/ssr"
+import { ArrowLeftIcon } from "@phosphor-icons/react/dist/ssr"
 import Link from "next/link"
 
 const Header = () => {
@@ -8,7 +8,7 @@ const Header = () => {
         href="/"
         className="inline-flex items-center gap-2 font-medium text-green-primary duration-300 hover:text-green-darkest"
       >
-        <ArrowLeft size={18} />
+        <ArrowLeftIcon size={18} />
         Back to Recipes
       </Link>
     </header>

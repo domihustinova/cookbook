@@ -1,4 +1,4 @@
-import { Drop, FishSimple } from "@phosphor-icons/react/dist/ssr"
+import { DropIcon, FishSimpleIcon } from "@phosphor-icons/react/dist/ssr"
 import { render, screen } from "@testing-library/react"
 import { userEvent } from "@testing-library/user-event"
 
@@ -53,14 +53,14 @@ describe("CaloriesInfo", () => {
 
 describe("NutrientInfo", () => {
   it("renders total nutrient information", () => {
-    render(<NutrientInfo Icon={Drop} value={250} unit="kcal" label="total" />)
+    render(<NutrientInfo Icon={DropIcon} value={250} unit="kcal" label="total" />)
 
     expect(screen.getByTestId(/nutrient-total/)).toBeVisible()
     expect(screen.getByText("250 kcal")).toBeVisible()
   })
 
   it("renders protein nutrient information", () => {
-    render(<NutrientInfo Icon={FishSimple} value={10} unit="g" label="protein" />)
+    render(<NutrientInfo Icon={FishSimpleIcon} value={10} unit="g" label="protein" />)
 
     expect(screen.getByTestId(/nutrient-protein/)).toBeVisible()
     expect(screen.getByText("10 g")).toBeVisible()
