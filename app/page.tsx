@@ -1,9 +1,8 @@
 import RecipeDetailCard from "@/app/components/RecipeDetailCard"
-import getRecipesDetails from "@/helpers/getRecipesDetails"
+import { recipes } from "@/data/recipes"
+import { getCaloriesInfo } from "@/helpers/nutrition"
 
 const Home = () => {
-  const recipesDetails = getRecipesDetails()
-
   return (
     <div className="min-h-screen bg-defaultGreen">
       <header className="py-28 text-center sm:py-40">
@@ -20,8 +19,14 @@ const Home = () => {
         <section className="mx-auto max-w-6xl">
           <h2 className="font-semibold text-lg tracking-wide md:text-xl">Recently added</h2>
           <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {recipesDetails.map(recipeDetails => (
-              <RecipeDetailCard key={recipeDetails.title} {...recipeDetails} />
+            {recipes.map(({ id, title, category, nutrients, yields }) => (
+              <RecipeDetailCard
+                key={id}
+                id={id}
+                title={title}
+                category={category}
+                caloriesLabel={getCaloriesInfo(nutrients, yields)}
+              />
             ))}
           </div>
         </section>
