@@ -6,9 +6,24 @@ import type { Ingredient } from "@/types/index"
 import Ingredients from "../Ingredients"
 
 const mockIngredients: Ingredient[] = [
-  { ingredient: "Flour", amount: "200", unitType: "weight", unit: "grams" },
-  { ingredient: "Sugar", amount: "100", unitType: "weight", unit: "grams" },
-  { ingredient: "Eggs", amount: "2", unitType: "count", unit: "piece" },
+  {
+    ingredientId: "all-purpose-flour",
+    name: "Flour",
+    amount: 200,
+    measurement: { unitType: "weight", unit: "grams" },
+  },
+  {
+    ingredientId: "sugar",
+    name: "Sugar",
+    amount: 100,
+    measurement: { unitType: "weight", unit: "grams" },
+  },
+  {
+    ingredientId: "eggs",
+    name: "Eggs",
+    amount: 2,
+    measurement: { unitType: "count", unit: "piece" },
+  },
 ]
 
 describe("Ingredients", () => {
@@ -91,11 +106,11 @@ describe("Ingredients", () => {
     fireEvent.click(flourRow as Element)
 
     const stored = localStorage.getItem("usedIngredients-recipe-1")
-    expect(stored).toBe(JSON.stringify(["Flour"]))
+    expect(stored).toBe(JSON.stringify(["all-purpose-flour"]))
   })
 
   test("loads used ingredients from localStorage on mount", () => {
-    localStorage.setItem("usedIngredients-recipe-1", JSON.stringify(["Flour", "Sugar"]))
+    localStorage.setItem("usedIngredients-recipe-1", JSON.stringify(["all-purpose-flour", "sugar"]))
 
     render(<Ingredients recipeId="recipe-1" ingredients={mockIngredients} />)
 
@@ -112,7 +127,9 @@ describe("Ingredients", () => {
     const flourRow = screen.getByText("Flour").closest("tr")
     fireEvent.click(flourRow as Element)
 
-    expect(localStorage.getItem("usedIngredients-recipe-1")).toBe(JSON.stringify(["Flour"]))
+    expect(localStorage.getItem("usedIngredients-recipe-1")).toBe(
+      JSON.stringify(["all-purpose-flour"]),
+    )
 
     unmount()
 

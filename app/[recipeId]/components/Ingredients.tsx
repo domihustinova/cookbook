@@ -39,7 +39,7 @@ const Ingredients = ({ recipeId, ingredients }: IngredientsProps) => {
   }
 
   const handleCompleteClick = () => {
-    setUsedIngredients(ingredients.map(({ ingredient }) => ingredient))
+    setUsedIngredients(ingredients.map(({ ingredientId }) => ingredientId))
   }
 
   const handleResetClick = () => {
@@ -51,20 +51,16 @@ const Ingredients = ({ recipeId, ingredients }: IngredientsProps) => {
       <h2 className="w-fit bg-brush px-3 font-semibold text-green-darkest text-xl">Ingredients</h2>
       <table className="w-full text-center">
         <tbody>
-          {ingredients.map(({ ingredient, amount, ...ingredientData }, index) => {
-            const id = `ingredient-${index}`
-            const isUsed = usedIngredients.includes(ingredient)
-            const unitSymbol = getIngredientUnitSymbol({
-              amount,
-              ingredient,
-              ...ingredientData,
-            } as Ingredient)
+          {ingredients.map(ingredient => {
+            const { ingredientId, name, amount } = ingredient
+            const isUsed = usedIngredients.includes(ingredientId)
+            const unitSymbol = getIngredientUnitSymbol(ingredient)
 
             return (
               <tr
-                key={id}
+                key={ingredientId}
                 className="group cursor-pointer duration-300 hover:text-slate-500"
-                onClick={() => toggleIngredient(ingredient)}
+                onClick={() => toggleIngredient(ingredientId)}
               >
                 <td
                   className={`pr-2 text-right ${isUsed ? "text-green-primary line-through" : ""} border-r`}
@@ -74,7 +70,7 @@ const Ingredients = ({ recipeId, ingredients }: IngredientsProps) => {
                 <td
                   className={`pl-2 text-left font-semibold ${isUsed ? "text-green-primary line-through" : ""} flex items-center gap-1`}
                 >
-                  {ingredient}
+                  {name}
                   <span className="inline-flex w-4">
                     {isUsed && <CheckIcon data-test="check-icon" />}
                   </span>

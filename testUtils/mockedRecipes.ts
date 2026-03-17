@@ -2,10 +2,11 @@ import type { Recipe } from "@/types"
 
 export const mockedRecipes: Pick<
   Recipe,
-  "id" | "category" | "nutrients" | "yields" | "title" | "ingredients"
+  "id" | "course" | "category" | "nutrients" | "yields" | "title" | "ingredients"
 >[] = [
   {
     id: "dummy-recipe1",
+    course: ["snack", "breakfast"],
     category: "bread",
     yields: { amount: 2, type: "piece" },
     nutrients: {
@@ -16,14 +17,30 @@ export const mockedRecipes: Pick<
     },
     title: "title1",
     ingredients: [
-      { ingredient: "Flour", amount: "200", unitType: "weight", unit: "grams" },
-      { ingredient: "Sugar", amount: "100", unitType: "weight", unit: "grams" },
-      { ingredient: "Eggs", amount: "2", unitType: "count", unit: "piece" },
+      {
+        ingredientId: "flour",
+        name: "Flour",
+        amount: 200,
+        measurement: { unitType: "weight", unit: "grams" },
+      },
+      {
+        ingredientId: "sugar",
+        name: "Sugar",
+        amount: 100,
+        measurement: { unitType: "weight", unit: "grams" },
+      },
+      {
+        ingredientId: "eggs",
+        name: "Eggs",
+        amount: 2,
+        measurement: { unitType: "count", unit: "piece" },
+      },
     ],
   },
   {
     id: "dummy-recipe2",
-    category: "dessert",
+    course: ["dessert"],
+    category: "cake",
     yields: { amount: 3, type: "serving" },
     nutrients: {
       totalKcal: 1800,
@@ -33,14 +50,30 @@ export const mockedRecipes: Pick<
     },
     title: "title2",
     ingredients: [
-      { ingredient: "Flour", amount: "200", unitType: "weight", unit: "grams" },
-      { amount: "2", ingredient: "cocoa", unitType: "volume", unit: "tablespoon" },
-      { ingredient: "Eggs", amount: "2", unitType: "count", unit: "piece" },
+      {
+        ingredientId: "flour",
+        name: "Flour",
+        amount: 200,
+        measurement: { unitType: "weight", unit: "grams" },
+      },
+      {
+        ingredientId: "cocoa",
+        name: "Cocoa",
+        amount: 2,
+        measurement: { unitType: "volume", unit: "tablespoon" },
+      },
+      {
+        ingredientId: "eggs",
+        name: "Eggs",
+        amount: 2,
+        measurement: { unitType: "count", unit: "piece" },
+      },
     ],
   },
   {
     id: "dummy-recipe3",
-    category: "main",
+    course: ["main"],
+    category: "soup",
     yields: { amount: 3, type: "piece" },
     nutrients: {
       totalKcal: 400,
@@ -50,13 +83,29 @@ export const mockedRecipes: Pick<
     },
     title: "title3",
     ingredients: [
-      { ingredient: "Flour", amount: "200", unitType: "weight", unit: "grams" },
-      { ingredient: "Sugar", amount: "100", unitType: "weight", unit: "grams" },
-      { amount: "500", ingredient: "milk", unitType: "volume", unit: "millilitre" },
+      {
+        ingredientId: "flour",
+        name: "Flour",
+        amount: 200,
+        measurement: { unitType: "weight", unit: "grams" },
+      },
+      {
+        ingredientId: "sugar",
+        name: "Sugar",
+        amount: 100,
+        measurement: { unitType: "weight", unit: "grams" },
+      },
+      {
+        ingredientId: "milk",
+        name: "Milk",
+        amount: 500,
+        measurement: { unitType: "volume", unit: "millilitre" },
+      },
     ],
   },
   {
     id: "dummy-recipe4",
+    course: ["snack"],
     category: "bread",
     yields: { amount: 1, type: "serving" },
     nutrients: {
@@ -67,14 +116,30 @@ export const mockedRecipes: Pick<
     },
     title: "title4",
     ingredients: [
-      { ingredient: "Flour", amount: "200", unitType: "weight", unit: "grams" },
-      { ingredient: "Sugar", amount: "100", unitType: "weight", unit: "grams" },
-      { ingredient: "Eggs", amount: "2", unitType: "count", unit: "piece" },
+      {
+        ingredientId: "flour",
+        name: "Flour",
+        amount: 200,
+        measurement: { unitType: "weight", unit: "grams" },
+      },
+      {
+        ingredientId: "sugar",
+        name: "Sugar",
+        amount: 100,
+        measurement: { unitType: "weight", unit: "grams" },
+      },
+      {
+        ingredientId: "eggs",
+        name: "Eggs",
+        amount: 2,
+        measurement: { unitType: "count", unit: "piece" },
+      },
     ],
   },
   {
     id: "dummy-recipe5",
-    category: "dessert",
+    course: ["dessert"],
+    category: "cake",
     yields: { amount: 7, type: "piece" },
     nutrients: {
       totalKcal: 600,
@@ -84,8 +149,18 @@ export const mockedRecipes: Pick<
     },
     title: "title5",
     ingredients: [
-      { ingredient: "Flour", amount: "200", unitType: "weight", unit: "grams" },
-      { amount: "200", ingredient: "water", unitType: "weight", unit: "grams" },
+      {
+        ingredientId: "flour",
+        name: "Flour",
+        amount: 200,
+        measurement: { unitType: "weight", unit: "grams" },
+      },
+      {
+        ingredientId: "water",
+        name: "Water",
+        amount: 200,
+        measurement: { unitType: "weight", unit: "grams" },
+      },
     ],
   },
 ]

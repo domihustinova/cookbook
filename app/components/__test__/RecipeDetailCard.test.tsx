@@ -6,10 +6,10 @@ describe("RecipeDetailCard", () => {
   beforeEach(() => {
     render(
       <RecipeDetailCard
-        category="dessert"
+        id="dummy-recipe"
+        category="pancake"
         title="Dummy recipe"
-        caloriesInfo="350 kcal/serving"
-        href="/dummy-recipe"
+        caloriesLabel="350 kcal/serving"
       />,
     )
   })
@@ -26,7 +26,7 @@ describe("RecipeDetailCard", () => {
   })
 
   it("displays the recipe card icon", () => {
-    expect(screen.getByLabelText("dessert")).toBeVisible()
+    expect(screen.getByLabelText("pancake")).toBeVisible()
   })
 
   it("displays the calories info", () => {

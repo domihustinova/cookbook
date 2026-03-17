@@ -33,17 +33,22 @@ const weightUnit: {
 }
 
 const getIngredientUnitSymbol = (ingredient: Ingredient): string => {
-  const { amount, unitType, unit } = ingredient
+  const {
+    amount,
+    measurement: { unitType, unit },
+  } = ingredient
 
   switch (unitType) {
     case "count":
-      return countUnit[unit][amount === "1" ? "singular" : "plural"]
+      return countUnit[unit][amount === 1 ? "singular" : "plural"]
     case "volume":
       return volumeUnit[unit]
     case "weight":
       return weightUnit[unit]
-    default:
-      return ""
+    default: {
+      const exhaustiveCheck: never = unitType
+      throw new Error(`Unsupported unit type: ${exhaustiveCheck}`)
+    }
   }
 }
 
