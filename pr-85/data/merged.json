@@ -1,50 +1,50 @@
 [
   {
-    "url": "https://cookbook-kkp5-j1oky2zzw-domis-projects-dd02db0d.vercel.app/",
+    "url": "https://cookbook-kkp5-12i83rarf-domis-projects-dd02db0d.vercel.app/",
     "device": "desktop-chrome",
     "score": 100,
     "violations": 0,
     "label": "landing-page",
-    "date": "2026-03-18T19:59:48.972Z"
+    "date": "2026-03-18T21:05:29.983Z"
   },
   {
-    "url": "https://cookbook-kkp5-j1oky2zzw-domis-projects-dd02db0d.vercel.app/",
+    "url": "https://cookbook-kkp5-12i83rarf-domis-projects-dd02db0d.vercel.app/",
     "device": "desktop-firefox",
     "score": 100,
     "violations": 0,
     "label": "landing-page",
-    "date": "2026-03-18T19:59:49.885Z"
+    "date": "2026-03-18T21:05:31.522Z"
   },
   {
-    "url": "https://cookbook-kkp5-j1oky2zzw-domis-projects-dd02db0d.vercel.app/",
+    "url": "https://cookbook-kkp5-12i83rarf-domis-projects-dd02db0d.vercel.app/",
     "device": "mobile-safari",
     "score": 100,
     "violations": 0,
     "label": "landing-page",
-    "date": "2026-03-18T19:59:56.194Z"
+    "date": "2026-03-18T21:05:43.190Z"
   },
   {
-    "url": "https://cookbook-kkp5-j1oky2zzw-domis-projects-dd02db0d.vercel.app/kefir-cake",
+    "url": "https://cookbook-kkp5-12i83rarf-domis-projects-dd02db0d.vercel.app/kefir-cake",
     "device": "desktop-chrome",
     "score": 100,
     "violations": 0,
     "label": "recipe-detail-page",
-    "date": "2026-03-18T19:59:49.707Z"
+    "date": "2026-03-18T21:05:30.152Z"
   },
   {
-    "url": "https://cookbook-kkp5-j1oky2zzw-domis-projects-dd02db0d.vercel.app/kefir-cake",
+    "url": "https://cookbook-kkp5-12i83rarf-domis-projects-dd02db0d.vercel.app/kefir-cake",
     "device": "desktop-firefox",
     "score": 100,
     "violations": 0,
     "label": "recipe-detail-page",
-    "date": "2026-03-18T19:59:56.133Z"
+    "date": "2026-03-18T21:05:35.084Z"
   },
   {
-    "url": "https://cookbook-kkp5-j1oky2zzw-domis-projects-dd02db0d.vercel.app/kefir-cake",
+    "url": "https://cookbook-kkp5-12i83rarf-domis-projects-dd02db0d.vercel.app/kefir-cake",
     "device": "mobile-safari",
     "score": 100,
     "violations": 0,
     "label": "recipe-detail-page",
-    "date": "2026-03-18T19:59:58.791Z"
+    "date": "2026-03-18T21:05:46.878Z"
   }
 ]
