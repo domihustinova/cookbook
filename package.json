@@ -12,11 +12,12 @@
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "pw": "playwright test",
-    "pw:ui": "playwright test --ui",
-    "pw:headed": "playwright test --headed",
-    "pw:debug": "playwright test --debug",
     "pw:report": "playwright show-report",
-    "pw:a11y": "playwright test tests/accessibility/accessibility.spec.ts --project=\"Desktop Chrome\"",
+    "pw:a11y": "playwright test --project=a11y-*",
+    "reducer": "tsx tests/accessibility/support/scripts/reducer.ts",
+    "htmlIndex": "tsx tests/accessibility/support/scripts/htmlIndex.ts",
+    "pw:a11y:cleanup": "rm -rf public/data/ public/reports/ public/index.html",
+    "pw:a11y:local": "tsx tests/accessibility/support/scripts/localRun.ts",
     "prepare": "husky"
   },
   "dependencies": {
@@ -38,6 +39,7 @@
     "@types/node": "^22",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
+    "axe-html-reporter": "^2.2.11",
     "husky": "^9.1.7",
     "jest": "^30.2.0",
     "jest-environment-jsdom": "^30.2.0",
@@ -45,6 +47,7 @@
     "lint-staged": "^16.2.7",
     "postcss": "^8",
     "ts-node": "^10.9.2",
+    "tsx": "^4.21.0",
     "typescript": "^5"
   },
   "lint-staged": {
