@@ -1,0 +1,50 @@
+[
+  {
+    "url": "https://cookbook-domi.vercel.app/",
+    "device": "desktop-chrome",
+    "score": 100,
+    "violations": 0,
+    "label": "landing-page",
+    "date": "2026-03-18T17:30:51.519Z"
+  },
+  {
+    "url": "https://cookbook-domi.vercel.app/",
+    "device": "desktop-firefox",
+    "score": 100,
+    "violations": 0,
+    "label": "landing-page",
+    "date": "2026-03-18T17:30:53.551Z"
+  },
+  {
+    "url": "https://cookbook-domi.vercel.app/",
+    "device": "mobile-safari",
+    "score": 100,
+    "violations": 0,
+    "label": "landing-page",
+    "date": "2026-03-18T17:30:57.598Z"
+  },
+  {
+    "url": "https://cookbook-domi.vercel.app/kefir-cake",
+    "device": "desktop-chrome",
+    "score": 100,
+    "violations": 0,
+    "label": "recipe-detail-page",
+    "date": "2026-03-18T17:30:51.663Z"
+  },
+  {
+    "url": "https://cookbook-domi.vercel.app/kefir-cake",
+    "device": "desktop-firefox",
+    "score": 100,
+    "violations": 0,
+    "label": "recipe-detail-page",
+    "date": "2026-03-18T17:30:58.710Z"
+  },
+  {
+    "url": "https://cookbook-domi.vercel.app/kefir-cake",
+    "device": "mobile-safari",
+    "score": 100,
+    "violations": 0,
+    "label": "recipe-detail-page",
+    "date": "2026-03-18T17:31:00.468Z"
+  }
+]
