@@ -46,3 +46,8 @@ next-env.d.ts
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+
+# Accessibility report output
+public/data/
+public/reports/
+public/index.html

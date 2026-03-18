@@ -1,46 +1,40 @@
-import AxeBuilder from "@axe-core/playwright"
-import { expect, type Page, type TestInfo, test } from "@playwright/test"
-import type { Result } from "axe-core"
+import type { Page, TestInfo } from "@playwright/test"
+import { expect, test } from "@playwright/test"
 
-const A11Y_TAGS = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "best-practice"]
+import { checkA11y, writeJSON } from "@/tests/accessibility/support/utils"
 
-async function scanAndAttach(page: Page, testInfo: TestInfo, label: string) {
-  const results = await new AxeBuilder({ page }).withTags(A11Y_TAGS).analyze()
+const BASE_URL = process.env.BASE_URL ?? "http://localhost:3000"
 
-  await testInfo.attach(`${label} – axe results`, {
-    body: JSON.stringify(results, null, 2),
-    contentType: "application/json",
-  })
-
-  return results
-}
-
-function formatViolations(violations: Result[]): string {
-  if (violations.length === 0) return "No violations found! 🚀"
-  const lines = violations.map(
-    v =>
-      `[${v.impact?.toUpperCase()}] ${v.id}: ${v.description}\n  Help: ${v.helpUrl}\n  Nodes: ${v.nodes
-        .map(n => n.html)
-        .join(", ")}`,
-  )
-  return `\n\n🚩 Accessibility violations found:\n${lines.join("\n\n")}`
+async function auditPage({
+  page,
+  testInfo,
+  label,
+  url,
+}: {
+  page: Page
+  testInfo: TestInfo
+  label: string
+  url: string
+}): Promise<void> {
+  const data = await checkA11y({ page, testInfo, label, url })
+  await writeJSON(data)
+  expect(data.violations).toBe(0)
 }
 
 test.describe("Accessibility", () => {
-  test("Recipe search landing page has no violations", async ({ page }, testInfo) => {
-    await page.goto("/")
+  test("Recipe search landing page", async ({ page }, testInfo) => {
+    const url = `${BASE_URL}/`
+    await page.goto(url)
     await page.getByTestId("recipe-card").first().waitFor()
-
-    const results = await scanAndAttach(page, testInfo, "Landing page")
-    expect(results.violations, formatViolations(results.violations)).toEqual([])
+    await auditPage({ page, testInfo, label: "landing-page", url })
   })
 
-  test("Recipe detail page has no violations", async ({ page }, testInfo) => {
-    await page.goto("/")
+  test("Recipe detail page", async ({ page }, testInfo) => {
+    const url = `${BASE_URL}/`
+    await page.goto(url)
+    await page.getByTestId("recipe-card").first().waitFor()
     await page.getByTestId("recipe-card").first().click()
     await page.getByTestId("recipe-detail-page").waitFor()
-
-    const results = await scanAndAttach(page, testInfo, "Recipe detail page")
-    expect(results.violations, formatViolations(results.violations)).toEqual([])
+    await auditPage({ page, testInfo, label: "recipe-detail-page", url: page.url() })
   })
 })

@@ -3,22 +3,73 @@ name: Test
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
       - "**"
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: "Base URL to run accessibility tests against (skips Vercel deployment wait)"
+        required: false
+        type: string
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 
 jobs:
+  get-base-url:
+    runs-on: ubuntu-latest
+    outputs:
+      url: ${{ steps.url.outputs.url }}
+    steps:
+      - name: Wait for Vercel deployment
+        id: url
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BASE_URL_INPUT: ${{ inputs.base_url }}
+        run: |
+          if [ -n "$BASE_URL_INPUT" ]; then
+            echo "url=$BASE_URL_INPUT" >> $GITHUB_OUTPUT
+            echo "Using manually provided base URL: $BASE_URL_INPUT"
+            exit 0
+          fi
+
+          SHA="${{ github.event.pull_request.head.sha || github.sha }}"
+          REPO="${{ github.repository }}"
+          ENVIRONMENT=${{ (github.event_name == 'pull_request' || github.ref != 'refs/heads/main') && '"Preview"' || '"Production"' }}
+
+          for i in $(seq 1 24); do
+            DEPLOYMENT_ID=$(gh api "repos/${REPO}/deployments?sha=${SHA}&per_page=10" \
+              --jq "[.[] | select(.environment | test(\"${ENVIRONMENT}\"; \"i\"))] | first | .id" 2>/dev/null)
+
+            if [ "${DEPLOYMENT_ID}" != "null" ] && [ -n "${DEPLOYMENT_ID}" ]; then
+              URL=$(gh api "repos/${REPO}/deployments/${DEPLOYMENT_ID}/statuses" \
+                --jq '[.[] | select(.state == "success")] | first | .environment_url' 2>/dev/null)
+
+              if [ "${URL}" != "null" ] && [ -n "${URL}" ]; then
+                echo "url=${URL}" >> $GITHUB_OUTPUT
+                echo "Found URL: ${URL}"
+                exit 0
+              fi
+            fi
+
+            echo "Attempt ${i}/24: waiting for Vercel deployment..."
+            sleep 10
+          done
+
+          echo "Timed out waiting for Vercel deployment"
+          exit 1
+
   biome:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
-          node-version: 20
+          node-version: lts/*
           cache: "npm"
 
       - name: Install dependencies
@@ -30,13 +81,11 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
-          node-version: 20
+          node-version: lts/*
           cache: "npm"
 
       - name: Install dependencies
@@ -46,23 +95,159 @@ jobs:
         run: npm run test
 
   accessibility:
+    needs: get-base-url
     runs-on: ubuntu-latest
-    container:
-      image: mcr.microsoft.com/playwright:v1.58.2-noble
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: lts/*
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci
 
+      - name: Cache Playwright browsers
+        id: playwright-cache
+        uses: actions/cache@v5
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Install Playwright browsers
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        run: npx playwright install --with-deps chromium webkit
+
+      - name: Install Playwright system dependencies
+        if: steps.playwright-cache.outputs.cache-hit == 'true'
+        run: npx playwright install-deps chromium webkit
+
       - name: Run accessibility tests
         run: npm run pw:a11y
+        env:
+          BASE_URL: ${{ needs.get-base-url.outputs.url }}
+          VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
 
-      - name: Upload accessibility report
-        if: failure()
-        uses: actions/upload-artifact@v4
+      - name: Upload public directory
+        if: always()
+        uses: actions/upload-artifact@v7
         with:
-          name: accessibility-report
-          path: playwright-report/
-          retention-days: 30
+          name: a11y-public
+          path: |
+            public/data/
+            public/reports/
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Upload traces
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: a11y-traces
+          path: test-results/
+          retention-days: 7
+
+  reducer:
+    needs: accessibility
+    if: needs.accessibility.result == 'success' || needs.accessibility.result == 'failure'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: lts/*
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Download public directory
+        uses: actions/download-artifact@v8
+        with:
+          name: a11y-public
+          path: public/
+
+      - name: Run reducer
+        run: npm run reducer
+
+      - name: Upload merged public directory
+        uses: actions/upload-artifact@v7
+        with:
+          name: a11y-public-merged
+          path: |
+            public/data/
+            public/reports/
+          retention-days: 7
+
+  html-index:
+    needs: reducer
+    if: needs.reducer.result == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: lts/*
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Clear repo public directory
+        run: rm -rf public/
+
+      - name: Download merged public directory
+        uses: actions/download-artifact@v8
+        with:
+          name: a11y-public-merged
+          path: public/
+
+      - name: Generate HTML index
+        run: npm run htmlIndex
+
+      - name: Upload report artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: a11y-report
+          path: public/
+          retention-days: 7
+
+  deploy-pages:
+    needs: html-index
+    if: needs['html-index'].result == 'success' && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Download report
+        uses: actions/download-artifact@v8
+        with:
+          name: a11y-report
+          path: public/
+
+      - name: Set deploy path
+        id: deploy
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "path=pr-${{ github.event.pull_request.number }}" >> $GITHUB_OUTPUT
+          else
+            echo "path=main" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          destination_dir: ${{ steps.deploy.outputs.path }}
+
+      - name: Add report link to summary
+        run: |
+          {
+            echo "### Accessibility Report"
+            echo ""
+            echo "- [Open report](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/${{ steps.deploy.outputs.path }}/)"
+          } >> "$GITHUB_STEP_SUMMARY"
