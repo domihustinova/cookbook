@@ -63,7 +63,7 @@
       background: #f1f5f9;
       border-color: rgba(0,0,0,0.08);
     }
-    html[data-theme="light"] .sidebar-group-label { color: #94a3b8; }
+    html[data-theme="light"] .sidebar-group-label { color: #64748b; }
     html[data-theme="light"] .filter-btn { color: #475569; }
     html[data-theme="light"] .filter-btn:hover { background: #f1f5f9; color: #0f172a; }
     html[data-theme="light"] .filter-btn.active {
@@ -609,10 +609,6 @@
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg>
         desktop-chrome
       </button>
-      <button type="button" class="filter-btn" data-filter="device" data-value="desktop-firefox" aria-pressed="false">
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg>
-        desktop-firefox
-      </button>
       <button type="button" class="filter-btn" data-filter="device" data-value="mobile-safari" aria-pressed="false">
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="17" r="1" fill="currentColor"/></svg>
         mobile-safari
@@ -629,7 +625,7 @@
       <div class="page-header">
         <div>
           <h1>Accessibility Report</h1>
-          <p class="sub">2 pages scanned across 3 devices</p>
+          <p class="sub">2 pages scanned across 2 devices</p>
         </div>
         <div style="display:flex;align-items:center;gap:0.5rem;">
           <span class="wcag-badge">⚑ WCAG 2.1 AA + Best Practices</span>
@@ -657,14 +653,14 @@
           <div class="card-accent" style="background: linear-gradient(90deg, var(--teal), transparent)"></div>
           <div class="card-value">2</div>
           <div class="card-label">Pages scanned</div>
-          <div class="card-sub">6 total scans</div>
+          <div class="card-sub">4 total scans</div>
         </div>
         <div class="card">
           <div class="card-accent" style="background: linear-gradient(90deg, var(--teal), transparent)"></div>
-          <div class="card-value">3</div>
+          <div class="card-value">2</div>
           <div class="card-label">Devices</div>
           <div class="card-devices">
-            <span class="card-device-chip"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg>desktop-chrome</span><span class="card-device-chip"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg>desktop-firefox</span><span class="card-device-chip"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="17" r="1" fill="currentColor"/></svg>mobile-safari</span>
+            <span class="card-device-chip"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg>desktop-chrome</span><span class="card-device-chip"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="17" r="1" fill="currentColor"/></svg>mobile-safari</span>
           </div>
         </div>
       </div>
@@ -672,7 +668,7 @@
       <div class="table-wrap">
         <div class="table-toolbar">
           <span class="table-toolbar-title">Scan results</span>
-          <span class="result-count" id="visible-count">6 results</span>
+          <span class="result-count" id="visible-count">4 results</span>
         </div>
         <div class="table-scroll">
           <table>
@@ -690,7 +686,7 @@
               
       <tr data-device="desktop-chrome">
         <td>
-          <span class="url-cell" title="https://cookbook-kkp5-q4j0hcg7q-domis-projects-dd02db0d.vercel.app/">https://cookbook-kkp5-q4j0hcg7q-domis-projects-dd02db0d.vercel.app/</span>
+          <span class="url-cell" title="https://cookbook-kkp5-74vvo2xk6-domis-projects-dd02db0d.vercel.app/">https://cookbook-kkp5-74vvo2xk6-domis-projects-dd02db0d.vercel.app/</span>
         </td>
         <td>
           <button type="button" class="chip chip--device clickable-cell" data-filter="device" data-value="desktop-chrome" aria-pressed="false">
@@ -717,38 +713,9 @@
           </a>
         </td>
       </tr>
-      <tr data-device="desktop-firefox">
-        <td>
-          <span class="url-cell" title="https://cookbook-kkp5-q4j0hcg7q-domis-projects-dd02db0d.vercel.app/">https://cookbook-kkp5-q4j0hcg7q-domis-projects-dd02db0d.vercel.app/</span>
-        </td>
-        <td>
-          <button type="button" class="chip chip--device clickable-cell" data-filter="device" data-value="desktop-firefox" aria-pressed="false">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg>
-            desktop-firefox
-          </button>
-        </td>
-        <td class="label-cell">landing-page</td>
-        <td>
-          <span class="score-pill" style="color:var(--green);background:var(--green-dim)">
-            <span class="score-num">100</span>
-            <span class="score-lbl">Good</span>
-          </span>
-        </td>
-        <td>
-          <span class="vbadge vbadge--pass">
-            ✓ 0
-          </span>
-        </td>
-        <td>
-          <a class="report-link" href="reports/landing-page-desktop-firefox.html">
-            View
-            <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-          </a>
-        </td>
-      </tr>
       <tr data-device="mobile-safari">
         <td>
-          <span class="url-cell" title="https://cookbook-kkp5-q4j0hcg7q-domis-projects-dd02db0d.vercel.app/">https://cookbook-kkp5-q4j0hcg7q-domis-projects-dd02db0d.vercel.app/</span>
+          <span class="url-cell" title="https://cookbook-kkp5-74vvo2xk6-domis-projects-dd02db0d.vercel.app/">https://cookbook-kkp5-74vvo2xk6-domis-projects-dd02db0d.vercel.app/</span>
         </td>
         <td>
           <button type="button" class="chip chip--device clickable-cell" data-filter="device" data-value="mobile-safari" aria-pressed="false">
@@ -777,7 +744,7 @@
       </tr>
       <tr data-device="desktop-chrome">
         <td>
-          <span class="url-cell" title="https://cookbook-kkp5-q4j0hcg7q-domis-projects-dd02db0d.vercel.app/kefir-cake">https://cookbook-kkp5-q4j0hcg7q-domis-projects-dd02db0d.vercel.app/kefir-cake</span>
+          <span class="url-cell" title="https://cookbook-kkp5-74vvo2xk6-domis-projects-dd02db0d.vercel.app/kefir-cake">https://cookbook-kkp5-74vvo2xk6-domis-projects-dd02db0d.vercel.app/kefir-cake</span>
         </td>
         <td>
           <button type="button" class="chip chip--device clickable-cell" data-filter="device" data-value="desktop-chrome" aria-pressed="false">
@@ -804,38 +771,9 @@
           </a>
         </td>
       </tr>
-      <tr data-device="desktop-firefox">
-        <td>
-          <span class="url-cell" title="https://cookbook-kkp5-q4j0hcg7q-domis-projects-dd02db0d.vercel.app/kefir-cake">https://cookbook-kkp5-q4j0hcg7q-domis-projects-dd02db0d.vercel.app/kefir-cake</span>
-        </td>
-        <td>
-          <button type="button" class="chip chip--device clickable-cell" data-filter="device" data-value="desktop-firefox" aria-pressed="false">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg>
-            desktop-firefox
-          </button>
-        </td>
-        <td class="label-cell">recipe-detail-page</td>
-        <td>
-          <span class="score-pill" style="color:var(--green);background:var(--green-dim)">
-            <span class="score-num">100</span>
-            <span class="score-lbl">Good</span>
-          </span>
-        </td>
-        <td>
-          <span class="vbadge vbadge--pass">
-            ✓ 0
-          </span>
-        </td>
-        <td>
-          <a class="report-link" href="reports/recipe-detail-page-desktop-firefox.html">
-            View
-            <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-          </a>
-        </td>
-      </tr>
       <tr data-device="mobile-safari">
         <td>
-          <span class="url-cell" title="https://cookbook-kkp5-q4j0hcg7q-domis-projects-dd02db0d.vercel.app/kefir-cake">https://cookbook-kkp5-q4j0hcg7q-domis-projects-dd02db0d.vercel.app/kefir-cake</span>
+          <span class="url-cell" title="https://cookbook-kkp5-74vvo2xk6-domis-projects-dd02db0d.vercel.app/kefir-cake">https://cookbook-kkp5-74vvo2xk6-domis-projects-dd02db0d.vercel.app/kefir-cake</span>
         </td>
         <td>
           <button type="button" class="chip chip--device clickable-cell" data-filter="device" data-value="mobile-safari" aria-pressed="false">
