@@ -1,50 +1,50 @@
 [
   {
-    "url": "https://cookbook-domi.vercel.app/",
+    "url": "https://cookbook-kkp5-2gdppylay-domis-projects-dd02db0d.vercel.app/",
     "device": "desktop-chrome",
     "score": 100,
     "violations": 0,
     "label": "landing-page",
-    "date": "2026-03-18T18:14:06.384Z"
+    "date": "2026-03-18T18:59:29.076Z"
   },
   {
-    "url": "https://cookbook-domi.vercel.app/",
+    "url": "https://cookbook-kkp5-2gdppylay-domis-projects-dd02db0d.vercel.app/",
     "device": "desktop-firefox",
     "score": 100,
     "violations": 0,
     "label": "landing-page",
-    "date": "2026-03-18T18:14:08.005Z"
+    "date": "2026-03-18T18:59:30.326Z"
   },
   {
-    "url": "https://cookbook-domi.vercel.app/",
+    "url": "https://cookbook-kkp5-2gdppylay-domis-projects-dd02db0d.vercel.app/",
     "device": "mobile-safari",
     "score": 100,
     "violations": 0,
     "label": "landing-page",
-    "date": "2026-03-18T18:14:13.335Z"
+    "date": "2026-03-18T18:59:35.550Z"
   },
   {
-    "url": "https://cookbook-domi.vercel.app/kefir-cake",
+    "url": "https://cookbook-kkp5-2gdppylay-domis-projects-dd02db0d.vercel.app/kefir-cake",
     "device": "desktop-chrome",
     "score": 100,
     "violations": 0,
     "label": "recipe-detail-page",
-    "date": "2026-03-18T18:14:07.339Z"
+    "date": "2026-03-18T18:59:29.965Z"
   },
   {
-    "url": "https://cookbook-domi.vercel.app/kefir-cake",
+    "url": "https://cookbook-kkp5-2gdppylay-domis-projects-dd02db0d.vercel.app/kefir-cake",
     "device": "desktop-firefox",
     "score": 100,
     "violations": 0,
     "label": "recipe-detail-page",
-    "date": "2026-03-18T18:14:13.562Z"
+    "date": "2026-03-18T18:59:36.267Z"
   },
   {
-    "url": "https://cookbook-domi.vercel.app/kefir-cake",
+    "url": "https://cookbook-kkp5-2gdppylay-domis-projects-dd02db0d.vercel.app/kefir-cake",
     "device": "mobile-safari",
     "score": 100,
     "violations": 0,
     "label": "recipe-detail-page",
-    "date": "2026-03-18T18:14:15.930Z"
+    "date": "2026-03-18T18:59:37.836Z"
   }
 ]
