@@ -1,34 +1,34 @@
 [
   {
-    "url": "https://cookbook-kkp5-f6k9r1r1c-domis-projects-dd02db0d.vercel.app/",
+    "url": "https://cookbook-kkp5-bc2gzovkn-domis-projects-dd02db0d.vercel.app/",
     "device": "desktop-chrome",
     "score": 100,
     "violations": 0,
     "label": "landing-page",
-    "date": "2026-03-18T23:04:16.738Z"
+    "date": "2026-03-18T23:20:03.151Z"
   },
   {
-    "url": "https://cookbook-kkp5-f6k9r1r1c-domis-projects-dd02db0d.vercel.app/",
+    "url": "https://cookbook-kkp5-bc2gzovkn-domis-projects-dd02db0d.vercel.app/",
     "device": "mobile-safari",
     "score": 100,
     "violations": 0,
     "label": "landing-page",
-    "date": "2026-03-18T23:04:27.822Z"
+    "date": "2026-03-18T23:20:13.666Z"
   },
   {
-    "url": "https://cookbook-kkp5-f6k9r1r1c-domis-projects-dd02db0d.vercel.app/kefir-cake",
+    "url": "https://cookbook-kkp5-bc2gzovkn-domis-projects-dd02db0d.vercel.app/kefir-cake",
     "device": "desktop-chrome",
     "score": 100,
     "violations": 0,
     "label": "recipe-detail-page",
-    "date": "2026-03-18T23:04:17.058Z"
+    "date": "2026-03-18T23:20:03.873Z"
   },
   {
-    "url": "https://cookbook-kkp5-f6k9r1r1c-domis-projects-dd02db0d.vercel.app/kefir-cake",
+    "url": "https://cookbook-kkp5-bc2gzovkn-domis-projects-dd02db0d.vercel.app/kefir-cake",
     "device": "mobile-safari",
     "score": 100,
     "violations": 0,
     "label": "recipe-detail-page",
-    "date": "2026-03-18T23:04:28.024Z"
+    "date": "2026-03-18T23:20:14.134Z"
   }
 ]
