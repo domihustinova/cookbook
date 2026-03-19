@@ -3,8 +3,6 @@ import { expect, test } from "@playwright/test"
 
 import { checkA11y, writeJSON } from "@/tests/accessibility/support/utils"
 
-const BASE_URL = process.env.BASE_URL ?? "http://localhost:3000"
-
 async function auditPage({
   page,
   testInfo,
@@ -23,15 +21,13 @@ async function auditPage({
 
 test.describe("Accessibility", () => {
   test("Recipe search landing page", async ({ page }, testInfo) => {
-    const url = `${BASE_URL}/`
-    await page.goto(url)
+    await page.goto("/")
     await page.getByTestId("recipe-card").first().waitFor()
-    await auditPage({ page, testInfo, label: "landing-page", url })
+    await auditPage({ page, testInfo, label: "landing-page", url: page.url() })
   })
 
   test("Recipe detail page", async ({ page }, testInfo) => {
-    const url = `${BASE_URL}/`
-    await page.goto(url)
+    await page.goto("/")
     await page.getByTestId("recipe-card").first().waitFor()
     await page.getByTestId("recipe-card").first().click()
     await page.getByTestId("recipe-detail-page").waitFor()
